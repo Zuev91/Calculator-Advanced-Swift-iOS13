@@ -36,13 +36,11 @@ class ViewController: UIViewController {
         calculator.setNumber(displayValue)
         
         if let calcMethod = sender.currentTitle {
-            calculator.setNumber(displayValue)
-            guard let result = calculator.calculate(symbol: calcMethod) else {
-                fatalError()
+            
+            if let result = calculator.calculate(symbol: calcMethod) {
+                displayValue = result
             }
-            displayValue = result
         }
-        
     }
     
     
